@@ -23,18 +23,18 @@ public class Main {
         long startTime = System.nanoTime();
         Individual best = new Individual();
         int iter=0;
-        while(!best.feasible&&iter<50){
-        GA solver=new GA();
-        if(best.fitness==-1){
+      //  while(!best.feasible&&iter<50){
+       GA solver=new GA();
+      //  if(best.fitness==-1){
         best=solver.run();
-        }
-       else{
-            if(best.fitness>solver.run().fitness){
-                best=solver.run();
-            }
-        }
-        iter++;
-        }
+       // }
+      // else{
+       //     if(best.fitness>solver.run().fitness){
+       //         best=solver.run();
+      //      }
+      //  }
+      //  iter++;
+      //  }
         long endTime = System.nanoTime();
         long duration = (endTime - startTime);
         int[] cost = new int[maxVehicles];
@@ -65,7 +65,7 @@ public class Main {
         }
         System.out.println("And the total cost is "+sum);
         System.out.println("The optimal Result is "+Problem.optiRes);
-        System.out.println("The Genetic Algorithm finished 10 times in approximately "+ duration/1000000000+" seconds");
+        System.out.println("The Genetic Algorithm finished in approximately "+ duration/1000000000+" seconds");
         JFrame frame = new JFrame("Solution Graph");
         frame.setSize(1000,1000);
         frame.setResizable(true);
